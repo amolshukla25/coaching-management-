@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MAAC Institute Management Portal
+
+A comprehensive institute management system built with Next.js, Tailwind CSS, and Framer Motion.
+
+## Features
+
+### Role-Based Access Control
+- **Admin**: Full access to all features
+- **Teacher**: Manage batches, mark attendance, create lesson plans
+- **Student**: View attendance, lesson plans, and progress
+- **Academic Manager**: Monitor teacher performance, batch progress
+- **Account Manager**: Financial overview, fee tracking
+
+### Core Features
+
+#### Dashboard
+- Role-specific dashboards with real-time statistics
+- Interactive charts and graphs (using Recharts)
+- Activity feeds and notifications
+- Quick actions and shortcuts
+
+#### Batch Management
+- Create, edit, and delete batches
+- Assign teachers to batches
+- Track enrollment capacity
+- Schedule management
+
+#### Attendance System
+- Date-wise attendance tracking
+- Quick mark feature for teachers
+- Attendance history and reports
+- Export functionality
+
+#### Lesson Plans
+- Create and manage lesson plans
+- Schedule classes and topics
+- Track completion status
+- Materials and resources management
+
+#### Finance
+- Fee collection tracking
+- Payment history
+- Overdue alerts
+- Export reports
+
+#### Students & Teachers
+- Student profiles with progress tracking
+- Teacher workload management
+- Performance metrics
+
+## Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **State Management**: Zustand
+- **Charts**: Recharts
+- **Icons**: Lucide React
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to project directory
+cd maac-institute
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Test Credentials
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Use the quick login buttons on the login page:
 
-## Learn More
+| Role | Email |
+|------|-------|
+| Admin | admin@maac.com |
+| Teacher | rahul@maac.com |
+| Student | amit@student.com |
+| Academic Manager | academic@maac.com |
+| Account Manager | account@maac.com |
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/
+│   ├── auth/
+│   │   └── login/
+│   ├── dashboard/
+│   │   ├── admin/
+│   │   ├── teacher/
+│   │   ├── student/
+│   │   ├── academic-manager/
+│   │   └── account-manager/
+│   ├── batches/
+│   ├── attendance/
+│   ├── lesson-plans/
+│   ├── students/
+│   ├── teachers/
+│   ├── finance/
+│   └── settings/
+├── components/
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Input.tsx
+│   │   ├── Modal.tsx
+│   │   └── Table.tsx
+│   └── layout/
+│       ├── Layout.tsx
+│       ├── Sidebar.tsx
+│       └── Header.tsx
+├── lib/
+│   └── mockData.ts
+├── store/
+│   └── useStore.ts
+└── types/
+    └── index.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## UI Features
 
-## Deploy on Vercel
+- **Modern Design**: Glassmorphism effects, gradients, and blur
+- **Responsive**: Works on desktop, tablet, and mobile
+- **Animations**: Smooth transitions and micro-interactions
+- **Dark Mode Ready**: Toggle support in settings
+- **Accessible**: Proper ARIA labels and keyboard navigation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
+```
+
+## License
+
+MIT License - Free to use for educational purposes
