@@ -4,28 +4,13 @@ import { motion } from 'framer-motion';
 import { useStore } from '@/store/useStore';
 import Card, { StatCard } from '@/components/ui/Card';
 import {
-  Users,
   BookOpen,
   GraduationCap,
   Calendar,
-  TrendingUp,
   IndianRupee,
-  Clock,
-  Activity,
-  ArrowUpRight,
-  ArrowDownRight,
   MoreVertical
 } from 'lucide-react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
-
-const revenueData = [
-  { month: 'Jan', revenue: 45000, expenses: 32000 },
-  { month: 'Feb', revenue: 52000, expenses: 35000 },
-  { month: 'Mar', revenue: 48000, expenses: 30000 },
-  { month: 'Apr', revenue: 61000, expenses: 38000 },
-  { month: 'May', revenue: 55000, expenses: 33000 },
-  { month: 'Jun', revenue: 67000, expenses: 41000 },
-];
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
 
 const attendanceData = [
   { day: 'Mon', present: 142, absent: 14 },
@@ -98,52 +83,11 @@ export default function AdminDashboard() {
           color="green"
           trend="92% present"
         />
-        <StatCard
-          title="Revenue"
-          value={`₹${(dashboardStats.feesCollected / 1000).toFixed(0)}K`}
-          icon={<IndianRupee className="w-6 h-6" />}
-          color="orange"
-          trend="+8% from last month"
-        />
+
       </div>
 
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Revenue Chart */}
-        <Card className="p-6">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-lg font-semibold text-gray-900">Revenue Overview</h3>
-            <button className="p-2 hover:bg-gray-100 rounded-lg">
-              <MoreVertical className="w-5 h-5 text-gray-500" />
-            </button>
-          </div>
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={revenueData}>
-                <defs>
-                  <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="month" stroke="#9ca3af" />
-                <YAxis stroke="#9ca3af" />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: 'white',
-                    border: 'none',
-                    borderRadius: '12px',
-                    boxShadow: '0 10px 40px rgba(0,0,0,0.1)'
-                  }}
-                />
-                <Area type="monotone" dataKey="revenue" stroke="#8b5cf6" fillOpacity={1} fill="url(#colorRevenue)" />
-                <Area type="monotone" dataKey="expenses" stroke="#06b6d4" fillOpacity={1} fill="url(#colorRevenue)" />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </Card>
-
         {/* Attendance Chart */}
         <Card className="p-6">
           <div className="flex items-center justify-between mb-6">
